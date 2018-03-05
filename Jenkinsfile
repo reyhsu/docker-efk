@@ -5,7 +5,7 @@ pipeline {
       parallel {
         stage('steg1') {
           steps {
-            sh 'cat docker-compose up'
+            sh 'cat docker-compose.yml;cp docker-compose.yml /tmp/'
           }
         }
         stage('steg2') {
