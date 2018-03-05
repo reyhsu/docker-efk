@@ -17,7 +17,7 @@ pipeline {
     }
     stage('docker  cp') {
       steps {
-        sh 'docker cp rey_jenkins:/tmp/docker-compose.yml /tmp/'
+        sh 'cd /tmp;docker cp rey_jenkins:/tmp/docker-compose.yml .'
       }
     }
   }
