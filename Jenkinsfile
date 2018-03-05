@@ -13,11 +13,11 @@ pipeline {
             sh 'ls -al'
           }
         }
-        stage('docker cp') {
-          steps {
-            sh 'docker cp rey_jenkins:/tmp/docker-compose.yml /tmp/'
-          }
-        }
+      }
+    }
+    stage('docker  cp') {
+      steps {
+        sh 'docker cp rey_jenkins:/tmp/docker-compose.yml /tmp/'
       }
     }
   }
