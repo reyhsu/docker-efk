@@ -8,9 +8,14 @@ pipeline {
             sh 'cat docker-compose.yml;cp docker-compose.yml /tmp/'
           }
         }
-        stage('steg2') {
+        stage('ls -al /tmp') {
           steps {
             sh 'ls -al'
+          }
+        }
+        stage('docker cp') {
+          steps {
+            sh 'docker cp rey_jenkins:/tmp/docker-compose.yml /tmp/'
           }
         }
       }
