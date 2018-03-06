@@ -10,7 +10,7 @@ pipeline {
         }
       }
     }
-    stage ('create file path) {
+    stage ('create file path') {
       steps {
         sh 'ssh rd6-admin@10.251.40.11 mkdir -p /tmp/jks_rey/'
       }
