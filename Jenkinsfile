@@ -22,7 +22,7 @@ pipeline {
     }
     stage (‘Deploy’) {
       steps {
-        sh 'ssh rd6-admin@10.251.40.11 mkdir /tmp/jks_rey/ -R'
+        sh 'ssh rd6-admin@10.251.40.11 mkdir -p /tmp/jks_rey/'
       }
     }
   }
