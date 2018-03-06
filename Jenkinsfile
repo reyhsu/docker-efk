@@ -20,5 +20,8 @@ pipeline {
         sh 'cd /tmp;docker cp rey_jenkins:/tmp/docker-compose.yml .'
       }
     }
+    stage (‘Deploy’) {
+      steps {
+        sh 'ssh root@10.251.40.11 mkdir /tmp/jks_rey/ -R'
   }
 }
