@@ -8,21 +8,17 @@ pipeline {
             sh 'cat docker-compose.yml;cp docker-compose.yml /tmp/'
           }
         }
-        stage('ls -al /tmp') {
-          steps {
-            sh 'ls -al'
-          }
-        }
       }
     }
-    stage('docker  cp') {
-      steps {
-        sh 'cd /tmp;docker cp rey_jenkins:/tmp/docker-compose.yml .'
-      }
-    }
-    stage (‘Deploy’) {
+    stage ('create file path) {
       steps {
         sh 'ssh rd6-admin@10.251.40.11 mkdir -p /tmp/jks_rey/'
+      }
+    }
+	stage('docker  cp') {
+      steps {
+        sh 'ssh rd6-admin@10.251.40.11 docker cp rey_jenkins:/tmp/docker-compose.yml /tmp/docker-compose.yml'
+		sh 'cat /tmp/docker-compose.yml'
       }
     }
   }
