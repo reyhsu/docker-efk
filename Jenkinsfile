@@ -17,7 +17,8 @@ pipeline {
     }
     stage ('git clone') {
       steps {
-	sh 'ssh rd6-admin@10.251.40.11 cd /tmp/jks_rey/;git clone ssh://git@gitlab.rd6.vir888.com:10022/rd6/playbook.git'
+	sh 'ssh rd6-admin@10.251.40.11 cd /home/rd6-admin/playbook/; git pull; cp /home/rd6-admin/playbook/compose/qa/docker-compose-up.yml /tmp/jks_rey/docker-compose-up.yml'
+	sh 'ssh rd6-admin@10.251.40.11 cat /tmp/jks_rey/docker-compose-up.yml'
       }
     }
   }
