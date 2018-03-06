@@ -22,8 +22,8 @@ pipeline {
     }
     stage (‘Deploy’) {
       steps {
-        sh 'ssh root@10.251.40.11 mkdir /tmp/jks_rey/ -R'
-		}
-	}
+        sh 'ssh rd6-admin@10.251.40.11 mkdir /tmp/jks_rey/ -R'
+      }
+    }
   }
 }
